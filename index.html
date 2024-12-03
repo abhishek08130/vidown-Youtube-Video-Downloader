@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidown -YouTube Video Downloader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #ff0000;
+        }
+        .input-group {
+            margin: 20px 0;
+        }
+        input[type="url"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #ff0000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #cc0000;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Video Downloader</h1>
+        <div class="input-group">
+            <label for="videoUrl">Enter YouTube Video URL:</label>
+            <input type="url" id="videoUrl" placeholder="https://www.youtube.com/watch?v=..." required>
+            <button onclick="downloadVideo()">Download Video</button>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function downloadVideo() {
+            const videoUrl = document.getElementById('videoUrl').value;
+            const result = document.getElementById('result');
+            
+            if (!videoUrl) {
+                alert('Please enter a valid YouTube URL');
+                return;
+            }
+
+            // Note: This is a frontend-only implementation
+            // In a real application, you would need a backend server to handle the actual download
+            // due to YouTube's terms of service and technical limitations
+            
+            result.style.display = 'block';
+            result.innerHTML = `
+                <p>Please note: Due to YouTube's terms of service, video downloading requires a backend server.</p>
+                <p>To implement this functionality completely, you would need:</p>
+                <ul>
+                    <li>A backend server (Node.js, Python, etc.)</li>
+                    <li>A YouTube video processing library (youtube-dl, pytube, etc.)</li>
+                    <li>Proper error handling and user feedback</li>
+                    <li>Compliance with YouTube's terms of service</li>
+                </ul>
+            `;
+        }
+    </script>
+</body>
+</html>

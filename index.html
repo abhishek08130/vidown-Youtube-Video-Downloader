@@ -50,45 +50,45 @@
             border-radius: 5px;
             display: none;
         }
+        .error-message {
+            color: #ff0000;
+            text-align: center;
+            padding: 20px;
+            background-color: #ffe6e6;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .maintenance-message {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            margin-top: 20px;
+            border: 2px solid #dee2e6;
+        }
+        .maintenance-message h2 {
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+        .maintenance-message p {
+            color: #495057;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>YouTube Video Downloader</h1>
-        <div class="input-group">
-            <label for="videoUrl">Enter YouTube Video URL:</label>
-            <input type="url" id="videoUrl" placeholder="https://www.youtube.com/watch?v=..." required>
-            <button onclick="downloadVideo()">Download Video</button>
+        <div class="maintenance-message">
+            <h2>🛠️ Under Maintenance</h2>
+            <p>We're currently performing maintenance on our service.</p>
+            <p>Please check back later. We apologize for any inconvenience.</p>
         </div>
-        <div id="result"></div>
     </div>
 
     <script>
-        function downloadVideo() {
-            const videoUrl = document.getElementById('videoUrl').value;
-            const result = document.getElementById('result');
-            
-            if (!videoUrl) {
-                alert('Please enter a valid YouTube URL');
-                return;
-            }
-
-            // Note: This is a frontend-only implementation
-            // In a real application, you would need a backend server to handle the actual download
-            // due to YouTube's terms of service and technical limitations
-            
-            result.style.display = 'block';
-            result.innerHTML = `
-                <p>Please note: Due to YouTube's terms of service, video downloading requires a backend server.</p>
-                <p>To implement this functionality completely, you would need:</p>
-                <ul>
-                    <li>A backend server (Node.js, Python, etc.)</li>
-                    <li>A YouTube video processing library (youtube-dl, pytube, etc.)</li>
-                    <li>Proper error handling and user feedback</li>
-                    <li>Compliance with YouTube's terms of service</li>
-                </ul>
-            `;
-        }
+        // Service is under maintenance
+        console.log('Service is currently under maintenance');
     </script>
 </body>
 </html>
